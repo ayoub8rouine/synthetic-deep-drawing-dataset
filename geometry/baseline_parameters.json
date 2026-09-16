@@ -1,0 +1,21 @@
+{
+  "case_id": "baseline_midpoint",
+  "units": "mm",
+  "R1_die_radius": 7.5,
+  "R2_punch_radius": 7.5,
+  "R3_fillet_radius": 7.5,
+  "R4_fillet_radius": 45.0,
+  "R5_start_radius": 10.0,
+  "R5_end_radius": 17.5,
+  "D1_bead_position": 45.0,
+  "D2_bead_position": 115.0,
+  "draft_angle_deg": 47.5,
+  "sheet_thickness": 1.6,
+  "clearance_ratio": 1.1,
+  "blank_length": 420.0,
+  "blank_width": 260.0,
+  "tool_length": 320.0,
+  "punch_height": 52.0,
+  "mesh_size_blank": 5.0,
+  "mesh_size_tools": 6.0
+}

@@ -1,0 +1,9 @@
+# Core geometry and array operations
+numpy>=1.26
+gmsh==4.15.2
+trimesh>=4.0
+
+# Analysis and visualization
+matplotlib>=3.8
+pandas>=2.1
+scipy>=1.11

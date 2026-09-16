@@ -1,0 +1,77 @@
+# Python bytecode and environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.python-version
+
+# Test, lint, and editor state
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Local logs and diagnostics
+*.log
+*.log.err
+*.tmp
+running_process.json
+diagnostic.json
+
+# Generated datasets and visualization exports
+/dataset/
+/trellis_assets/
+/trellis_export_manifest.json
+/shapes/dataset/
+/shapes/trellis_assets/
+/u_shape/dataset/
+/u_shape/trellis_assets/
+
+# LS-DYNA run directories and large solver outputs
+/simulations/
+/shapes/simulations/
+/u_shape/simulations/
+**/d3plot*
+**/d3dump*
+**/d3hsp
+**/dynain
+**/glstat
+**/matsum
+**/messag
+**/rcforc
+**/rbdout
+**/sleout
+**/status.out
+**/lspost.msg
+**/group_file
+
+# Generated geometry, decks, reports, and media
+*.stl
+*.step
+*.stp
+*.npz
+*.npy
+*.glb
+*.ply
+*.obj
+*.k
+*.key
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.pdf
+*.html
+*.csv
+
+# The small solver smoke-test deck is source data, not generated output.
+!templates/smoke_test.k

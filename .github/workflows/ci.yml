@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  source-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install lightweight runtime dependency
+        run: python -m pip install "numpy>=1.26"
+      - name: Compile source
+        run: python -m compileall -q geometry meshing postprocessing scripts shapes u_shape
+      - name: Exercise the resumable sweep planner
+        run: python scripts/run_sweep.py --grid pilot --dry-run
+      - name: Exercise geometry samplers
+        run: |
+          python shapes/pipeline.py --sample --n 3
+          python u_shape/pipeline.py --sample --n 3

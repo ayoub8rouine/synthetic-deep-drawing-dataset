@@ -1,0 +1,2 @@
+# Kept for compatibility with older setup instructions.
+-r ../requirements.txt
