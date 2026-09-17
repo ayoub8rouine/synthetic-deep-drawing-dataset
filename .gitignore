@@ -81,3 +81,4 @@ diagnostic.json
 !docs/media/*.jpg
 !docs/media/*.gif
 !docs/media/*.mp4
+!docs/media/*.webp

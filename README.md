@@ -2,10 +2,18 @@
 
 <p align="center">
   <a href="docs/media/tool_construction_1080p.mp4">
-    <img src="docs/media/tool_construction.gif" width="100%"
+    <img src="docs/media/tool_construction.webp" width="100%"
          alt="How the tool set is built from one contour: punch, die, blank holder and blank, then combined">
   </a>
 </p>
+
+**How a tool set is built.** One plan contour, here a five-lobed cup
+`r(θ) = R + A·cos 5θ`, is offset into the die opening and the blank edge. Copies
+of that contour are stacked along a section profile and skinned into a
+structured quad mesh, first for the punch, then for the die, the blank holder
+and the blank. The four pieces are then combined into the tool set that goes
+into the solver deck. Click the animation for the 1080p version; it is rendered
+in Blender from the generator's own geometry and uses no solver output.
 
 <p align="center">
   <img src="docs/media/deep_drawing_loop.gif" width="100%"
