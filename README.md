@@ -1,25 +1,5 @@
 # Synthetic Deep Drawing Dataset Generator
 
-<p align="center">
-  <a href="docs/media/tool_construction_1080p.mp4">
-    <img src="docs/media/tool_construction.webp" width="100%"
-         alt="How the tool set is built from one contour: punch, die, blank holder and blank, then combined">
-  </a>
-</p>
-
-**How a tool set is built.** One plan contour, here a five-lobed cup
-`r(θ) = R + A·cos 5θ`, is offset into the die opening and the blank edge. Copies
-of that contour are stacked along a section profile and skinned into a
-structured quad mesh, first for the punch, then for the die, the blank holder
-and the blank. The four pieces are then combined into the tool set that goes
-into the solver deck. Click the animation for the 1080p version; it is rendered
-in Blender from the generator's own geometry and uses no solver output.
-
-<p align="center">
-  <img src="docs/media/deep_drawing_loop.gif" width="100%"
-       alt="A five-lobed cup being deep drawn, its strain field appearing, then five other formed shapes">
-</p>
-
 A reproducible Python and LS-DYNA pipeline for generating parametric
 deep-drawing datasets. It builds tool geometry and solver decks, runs resumable
 parameter sweeps, validates each simulation, and exports point clouds plus the
@@ -31,6 +11,39 @@ The project supports three geometry groups:
 - U-channels with independently parameterized end sections; and
 - cups with circular, elliptical, rectangular, polygonal, lobed, cross, and
   trapezoidal plan outlines.
+
+The two animations below show the two halves of the pipeline: first how a tool
+set is built from a single contour, then what the solver does with it.
+
+## Step 1: how a tool set is built
+
+<p align="center">
+  <a href="docs/media/tool_construction_1080p.mp4">
+    <img src="docs/media/tool_construction.webp" width="100%"
+         alt="How the tool set is built from one contour: punch, die, blank holder and blank, then combined">
+  </a>
+</p>
+
+One plan contour, here a five-lobed cup `r(θ) = R + A·cos 5θ`, is offset into the
+die opening and the blank edge. Copies of that contour are stacked along a
+section profile and skinned into a structured quad mesh: first the punch, then
+the die, the blank holder and the blank. The four pieces are then combined into
+the tool set that goes into the solver deck. Click the animation for the 1080p
+version. It is rendered in Blender from the generator's own geometry and uses no
+solver output.
+
+## Step 2: how the part is formed
+
+<p align="center">
+  <img src="docs/media/deep_drawing_loop.gif" width="100%"
+       alt="A five-lobed cup being deep drawn, its strain field appearing, then five other formed shapes">
+</p>
+
+The same tool set, run in LS-DYNA: the die and blank holder travel down over the
+fixed punch and draw the sheet into a cup. The animation is rebuilt from the
+states the solver writes, so every frame is simulation output. The major strain
+field appears on the finished part, and five other shapes follow, each from its
+own simulation.
 
 ## Formed geometries
 
