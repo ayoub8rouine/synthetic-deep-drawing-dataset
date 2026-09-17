@@ -5,12 +5,6 @@
        alt="A five-lobed cup being deep drawn, its strain field appearing, then five other formed shapes">
 </p>
 
-<p align="center"><sub>
-A five-lobed cup drawn in LS-DYNA and rendered in Blender directly from the
-solver's 14 written states, followed by five other formed shapes, each from its
-own simulation.
-</sub></p>
-
 A reproducible Python and LS-DYNA pipeline for generating parametric
 deep-drawing datasets. It builds tool geometry and solver decks, runs resumable
 parameter sweeps, validates each simulation, and exports point clouds plus the
