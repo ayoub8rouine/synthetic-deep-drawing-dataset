@@ -76,7 +76,8 @@ diagnostic.json
 # The small solver smoke-test deck is source data, not generated output.
 !templates/smoke_test.k
 
-# README media is committed on purpose: web-sized and size-checked (all < 10 MB)
+# README media is committed on purpose: web-sized and size-checked (all < 20 MB)
 !docs/media/*.png
 !docs/media/*.jpg
 !docs/media/*.gif
+!docs/media/*.mp4

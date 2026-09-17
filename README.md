@@ -1,6 +1,13 @@
 # Synthetic Deep Drawing Dataset Generator
 
 <p align="center">
+  <a href="docs/media/tool_construction_1080p.mp4">
+    <img src="docs/media/tool_construction.gif" width="100%"
+         alt="How the tool set is built from one contour: punch, die, blank holder and blank, then combined">
+  </a>
+</p>
+
+<p align="center">
   <img src="docs/media/deep_drawing_loop.gif" width="100%"
        alt="A five-lobed cup being deep drawn, its strain field appearing, then five other formed shapes">
 </p>
@@ -54,7 +61,8 @@ is exactly the colour on the bar.
 This repository does not include LS-DYNA. Anyone running the pipeline must
 obtain their own licence and use it under its terms.
 
-The animation and figures above were produced with the free **Ansys LS-DYNA
+The tool-construction animation is geometry only and uses no solver output. The
+forming animation and the figures above were produced with the free **Ansys LS-DYNA
 Student** edition as part of a student project and are shown here for
 demonstration only. Ansys limits the Student edition to student instruction,
 student projects and student demonstrations: results produced with it should not
