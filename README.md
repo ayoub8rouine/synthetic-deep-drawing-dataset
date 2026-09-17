@@ -55,6 +55,20 @@ is exactly the colour on the bar.
 > mild deep-drawing steel, not a calibrated grade, so the location of the strain
 > concentrations is more reliable than their absolute magnitude.
 
+## LS-DYNA licence notice
+
+This repository does not include LS-DYNA. Anyone running the pipeline must
+obtain their own licence and use it under its terms.
+
+The animation and figures above were produced with the free **Ansys LS-DYNA
+Student** edition as part of a student project and are shown here for
+demonstration only. Ansys limits the Student edition to student instruction,
+student projects and student demonstrations: results produced with it should not
+be used in publications, research data releases or commercial work. For any of
+those purposes, use an appropriate academic research or commercial licence and
+re-run the simulations under it. See the
+[Ansys academic usage terms](https://ansys.synopsys.com/legal/terms-and-conditions/academic-usage).
+
 Generated data and LS-DYNA binaries are intentionally not stored in this Git
 repository. A full working directory can be many gigabytes; the repository
 contains the code, material assumptions, configuration, and documentation needed
