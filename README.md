@@ -24,13 +24,27 @@ set is built from a single contour, then what the solver does with it.
   </a>
 </p>
 
-One plan contour, here a five-lobed cup `r(θ) = R + A·cos 5θ`, is offset into the
-die opening and the blank edge. Copies of that contour are stacked along a
-section profile and skinned into a structured quad mesh: first the punch, then
-the die, the blank holder and the blank. The four pieces are then combined into
-the tool set that goes into the solver deck. Click the animation for the 1080p
-version. It is rendered in Blender from the generator's own geometry and uses no
-solver output.
+Every cup family is one closed plan contour `p(θ)`: a circle, an ellipse, a
+rounded rectangle, a trapezoid, a regular N-gon, or a cos-lobed curve
+`r(θ) = R + A·cos Nθ`. The animation follows the five-lobed one. Its contour is
+offset into the die opening and the blank edge, then copies of it are stacked
+along a section profile and skinned into a structured quad mesh, first for the
+punch, then the die, the blank holder and the blank. Every surface is the same
+sweep,
+
+```text
+X(θ, z) = p(θ) + s(z) · n(θ)
+```
+
+where `n(θ)` is the outward normal and the offset `s(z)` comes from the section
+profile: nose or entry radius, drafted wall, clearance. Only `p(θ)` and `s(z)`
+change from one tool, or one family, to the next, which is why the six tool sets
+at the end all come out of the same code. The equations shown on screen are the
+ones implemented in [shapes/outlines.py](shapes/outlines.py) and
+[shapes/cup_draw.py](shapes/cup_draw.py).
+
+Click the animation for the 1080p version. It is rendered in Blender from the
+generator's own geometry and uses no solver output.
 
 ## Step 2: how the part is formed
 
