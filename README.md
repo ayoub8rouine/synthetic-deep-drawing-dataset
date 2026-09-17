@@ -1,5 +1,16 @@
 # Synthetic Deep Drawing Dataset Generator
 
+<p align="center">
+  <img src="docs/media/deep_drawing_loop.gif" width="100%"
+       alt="A five-lobed cup being deep drawn, its strain field appearing, then five other formed shapes">
+</p>
+
+<p align="center"><sub>
+A five-lobed cup drawn in LS-DYNA and rendered in Blender directly from the
+solver's 14 written states, followed by five other formed shapes, each from its
+own simulation.
+</sub></p>
+
 A reproducible Python and LS-DYNA pipeline for generating parametric
 deep-drawing datasets. It builds tool geometry and solver decks, runs resumable
 parameter sweeps, validates each simulation, and exports point clouds plus the
@@ -11,6 +22,38 @@ The project supports three geometry groups:
 - U-channels with independently parameterized end sections; and
 - cups with circular, elliptical, rectangular, polygonal, lobed, cross, and
   trapezoidal plan outlines.
+
+## Formed geometries
+
+![Six formed parts from separate simulations, coloured by major strain](docs/media/formed_geometries.jpg)
+
+Every part above is the final, pre-springback state of its own refined-mesh
+simulation, generated from a single parametric outline. Colours show major
+strain on one shared scale so the parts can be compared; the scale is tuned for
+illustration and each part is shown at the same display size. Quantitative
+plots follow below.
+
+## The tool set
+
+![Exploded view of the punch, blank holder, sheet and die](docs/media/tool_set_exploded.png)
+
+Punch, blank holder and die are generated together from the same outline as
+exact offsets of one another, so the three tools always match the part.
+
+## Strain fields
+
+![Major and minor strain on the formed five-lobed cup](docs/media/strain_fields.png)
+
+Major strain (left, linear scale from zero to the maximum) and minor strain
+(right, diverging scale centred on zero: blue is compression, red is tension)
+at the end of forming. The minor strain shows the flange compressed
+circumferentially at the lobe junctions as it draws in. The colours are applied
+to the solver values directly, with no lighting on them, so a colour on the part
+is exactly the colour on the bar.
+
+> The material card is a documented engineering assumption representative of
+> mild deep-drawing steel, not a calibrated grade, so the location of the strain
+> concentrations is more reliable than their absolute magnitude.
 
 Generated data and LS-DYNA binaries are intentionally not stored in this Git
 repository. A full working directory can be many gigabytes; the repository
